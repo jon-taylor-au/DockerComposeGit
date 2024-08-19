@@ -1,0 +1,18 @@
+---
+version: "2.1"
+services:
+  sonarr:
+    image: ghcr.io/linuxserver/sonarr:arm64v8-latest 
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Australia/Sydney
+    volumes:
+      - /media/USBHDD3/00_AppData/sonarr/config:/config
+      - /media/USBHDD1:/USBHDD1
+      - /media/USBHDD2:/USBHDD2
+      - /media/USBHDD3:/USBHDD3
+    ports:
+      - 8989:8989
+    restart: unless-stopped

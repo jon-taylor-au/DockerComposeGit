@@ -1,0 +1,19 @@
+---
+version: "2.1"
+services:
+  plex:
+    image: ghcr.io/linuxserver/radarr:arm64v8-latest 
+    container_name: radarr
+    network_mode: host
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - VERSION=docker
+      - PLEX_CLAIM= #optional
+    volumes:
+      - /media/USBHDD3/00_AppData/radarr/config:/config
+      - /media/USBHDD1:/USBHDD1
+      - /media/USBHDD2:/USBHDD2
+      - /media/USBHDD3:/USBHDD3
+      - /media/USBHDD1/01_Movies:/movies
+    restart: unless-stopped
