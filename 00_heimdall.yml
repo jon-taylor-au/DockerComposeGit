@@ -14,5 +14,6 @@ services:
       - /media/USBHDD2:/USBHDD2
       - /media/USBHDD3:/USBHDD3
     ports:
-      - 8844:8844
+      - 8844:80
+      - 8845:443
     restart: unless-stopped
