@@ -1,0 +1,18 @@
+---
+version: "2.1"
+services:
+  heimdall:
+    image: ghcr.io/linuxserver/heimdall:arm64v8-latest 
+    container_name: heimdall
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Australia/Sydney
+    volumes:
+      - /media/USBHDD3/00_AppData/heimdall/config:/config
+      - /media/USBHDD1:/USBHDD1
+      - /media/USBHDD2:/USBHDD2
+      - /media/USBHDD3:/USBHDD3
+    ports:
+      - 8844:8844
+    restart: unless-stopped
