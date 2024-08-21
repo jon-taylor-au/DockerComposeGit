@@ -1,7 +1,7 @@
 ---
 version: "2.1"
 services:
-  plex:
+  radarr:
     image: ghcr.io/linuxserver/radarr:arm64v8-latest 
     container_name: radarr
     network_mode: host
@@ -16,4 +16,6 @@ services:
       - /media/USBHDD2:/USBHDD2
       - /media/USBHDD3:/USBHDD3
       - /media/USBHDD1/01_Movies:/movies
+    ports:
+      - 8096:8096
     restart: unless-stopped
