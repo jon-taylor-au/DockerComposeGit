@@ -2,7 +2,7 @@
 version: "2.1"
 services:
   radarr:
-    image: ghcr.io/linuxserver/radarr:arm64v8-latest 
+    image: ghcr.io/linuxserver/radarr
     container_name: radarr
     network_mode: host
     environment:
