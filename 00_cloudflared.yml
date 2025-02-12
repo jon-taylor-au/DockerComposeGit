@@ -1,0 +1,16 @@
+services:
+  cloudflaretunnel:
+    container_name: cloudflaretunnel
+    image: cloudflare/cloudflared
+    restart: unless-stopped
+    environment:
+      - TUNNEL_TOKEN=$TUNNEL_TOKEN
+    command: tunnel --config /etc/cloudflared/config.yml --no-autoupdate run # Update each ingress rule in /home/pi/.cloudflared/config.yml | Also add 2 x DNS entries with the cloudflare tunnel id
+    volumes:
+      - /home/pi/.cloudflared:/etc/cloudflared
+    networks:
+      - pi_tunnel
+
+networks:
+  pi_tunnel:
+    external: true
