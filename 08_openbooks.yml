@@ -1,0 +1,10 @@
+services:
+  openbooks:
+    container_name: OpenBooks
+    image: evanbuss/openbooks:latest
+    restart: unless-stopped
+    ports:
+      - "4000:80"
+    volumes:
+      - "/media/USBHDD3/05_eBooks/02_eBooks:/books"
+    command: --persist --name JT1338
