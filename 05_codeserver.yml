@@ -8,7 +8,7 @@ services:
       - TZ=Australia/Sydney
       - PASSWORD= #optional
       - HASHED_PASSWORD= #optional
-      - SUDO_PASSWORD=112233 #optional
+      - SUDO_PASSWORD=$SUDO_PASSWORD #optional
       - SUDO_PASSWORD_HASH= #optional
       - PROXY_DOMAIN= #optional
       - DEFAULT_WORKSPACE=/config/workspace #optional
